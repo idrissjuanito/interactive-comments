@@ -30,12 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/solution-screenshot.png)
+![](./images/solution-preview.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/idrissjuanito/interactive-comments)
-- Live Site URL: [Add live site URL here](https://idrissjuanito/github.io/interactive-comments)
+- [solution URL](https://github.com/idrissjuanito/interactive-comments)
+- [live site URL](https://idrissjuanito/github.io/interactive-comments)
 
 ## my-process
 
