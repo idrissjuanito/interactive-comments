@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+$modBlue: hsl(238, 40%, 52%);
+$softRed: hsl(358, 79%, 66%);
+$lightBlue: hsl(239, 57%, 85%);
+$paleRed: hsl(357, 100%, 86%);
+$darkBlue: hsl(212, 24%, 26%);
+$grayishBlue: hsl(211, 10%, 45%);
+$lightGray: hsl(223, 19%, 93%);
+$vLightGray: hsl(228, 33%, 97%);
+$white: hsl(0, 0%, 100%);
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Rubik", sans-serif;
+}
+
+body{
+    width: 100vw;
+    background: $vLightGray;
+    color: $darkBlue;
+}
+
+.container{
+    width: 60%;
+    margin: 10vh auto;
+}
+p{
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $grayishBlue;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: $modBlue;
+    &:hover{
+        opacity: .5;
+    }
+}
+
+textarea{
+    width: 100%;
+    border: solid 1px $lightGray;
+    border-radius: 10px;
+    padding: 1rem;
+    color: $grayishBlue;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    &:focus{
+        outline: solid 1px $lightBlue;
+    }
+}
+button{
+    font-size: 1rem;
+    outline: none;
+    padding: 10px 1.3rem;
+    background-color: $modBlue;
+    border: solid 1px transparent;
+    border-radius: 10px;
+    box-shadow: none;
+    color: $white;
+    &:hover{
+        background-color: $lightBlue;
+        cursor: pointer;
+    }
+}
+.fas{
+    cursor: pointer;
+}
+.del-comment{
+    color: $softRed;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.card{
+    background-color: $white;
+    border-radius: 5px;
+    width: 100%;
+    height: fit-content;
+    padding: 1.2rem;
+    &__score{
+        flex-basis: 5%;
+        align-self: flex-start;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: $vLightGray;
+        padding: .8rem;
+        border-radius: 10px;
+        color: $modBlue;
+        i{
+            font-size: .7rem;
+            color: $lightBlue;
+        }
+    }
+    .actions-side{
+        display: none;
+    }
+    .user-avatar-below{
+        display: none;
+    }
+    &__comment{
+        flex-basis: 93%;
+    }
+    .replied-user, .comment-user{
+        font-weight: 500;
+    }
+    .replied-user{
+        color: $modBlue;
+    }
+    img{
+        width: 40px;
+    }
+    button{
+        width: 100px;
+    }
+}
+
+.replyBox{
+    width: 95%;
+    flex-direction: column;
+    align-items: flex-end;
+    border-left: solid 1px $lightGray;
+}
+
+.card.reply, .card.reply-form{
+    width: 95%;
+}
+.comments-list{
+    flex-direction: column;
+    align-items: flex-end;
+}
+.reply-form, .comment-reply{
+    margin-top: -0.5rem;
+}
+.comment-meta{
+    margin-bottom: 1.2rem;
+    .user{
+        img{
+            width: 40px;
+        }
+    }
+    .you{
+        background-color: $modBlue;
+        font-size: .8rem;
+        padding: 2px 5px;
+        color: $white;
+        border-radius: 2px;
+    }
+    .date{
+        color: $grayishBlue;
+    }
+}
+
+.confirm-popup{
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    flex-direction: column;
+    width: 300px;
+    height: 220px;
+    padding: 1.5rem;
+    background-color: $white;
+    border-radius: 10px;
+    align-items: flex-start;
+    z-index: 10;
+    box-shadow: 0 0 10px 100vw rgba($color: #000000, $alpha: 0.5);
+    button{
+        font-size: .8rem;
+        min-width: 50%;
+        padding: .8em 1em;
+        background-color: $grayishBlue;
+    }
+    h1{
+        font-size: 1.2rem;
+    }
+    .confirm-del{
+        background-color: $softRed;
+    }
+}
+
+.confirm-popup.hidden{
+    display: none;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media only screen and (max-width: 600px){
+    .container{
+        width: 95%;
+    }
+    .card{
+        position: relative;
+        flex-direction: column-reverse;
+        .card__score{
+            flex-direction: row-reverse;
+        }
+        .card__comment{
+            .actions{
+                display: none;
+            }
+        }
+        &.comment-form, &.reply-form, &.comment-reply{
+            flex-direction: column;
+        }
+        .actions-side{
+            display: block;
+        }
+        .actions-container{
+            width: 100%;
+        }
+        .user-avatar{
+            display: none;
+        }
+        .user-avatar-below{
+            display: block;
+        }
+        .form-after{
+            width: 100%;
+        }
+    }
+}
