@@ -278,30 +278,6 @@ function editComment(e){
 		persistComments();
 		main();
 	});
-
-	// comments.forEach((comment) => {
-	// 	if(Number(commentCard.id) === comment.id){
-	// 		btnUpdate.addEventListener('click', () => {
-	// 			textarea = document.querySelector("#comment-editor");
-	// 			comment.content = textarea.value
-	// 			persistComments();
-	// 			main();
-	// 		});
-	// 	}else{
-	// 		for(let reply of comment.replies){
-	// 			if(Number(commentCard.id) === reply.id){
-	// 				textarea.value = reply.content;
-					
-	// 				btnUpdate.addEventListener('click', () => {
-	// 					textarea = document.querySelector("#comment-editor");
-	// 					reply.content = textarea.value;
-	// 					persistComments();
-	// 					main();
-	// 				});;
-	// 			}
-	// 		}
-	// 	}
-	// });
 	e.target.style.opacity = 0.5;
 }
 
@@ -315,18 +291,7 @@ function updateScore(e){
 
 	const cmt = fetchComment(Number(commentCard.id));
 	cmt.score += increment;
-
-	// comments.forEach((comment) => {
-	// 	if(Number(commentCard.id) === comment.id){
-	// 		comment.score += increment;
-	// 	}else{
-	// 		for(let reply of comment.replies){
-	// 			if(Number(commentCard.id) === reply.id){
-	// 				reply.score += increment;
-	// 			}	
-	// 		}
-	// 	}
-	// });
+	
 	persistComments();
 	main();
 }
