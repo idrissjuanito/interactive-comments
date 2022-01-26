@@ -132,7 +132,6 @@ function mainForm(id){
 			<textarea name="comment-form" id="${typing}Text" rows="3" placeholder="Add a ${typing}..."></textarea>
 			<div class="flex form-after"><img src="${currentUser.image.png}" alt="" class="user-avatar-below">
 			<button  class="submit-${form}">${form === "comment-form" ? "Send" : "Reply"}</button></div>`;
-	console.log(typing);
 	return div;
 }
 
@@ -153,7 +152,6 @@ function replyForm(e){
 
 function addComment(e){
 	if(e.target.classList.contains("submit-comment-form") && typing !== "comment"){
-		console.log(typing);
 		return;
 	}
 
