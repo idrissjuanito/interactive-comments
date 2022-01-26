@@ -12,7 +12,7 @@ let commentSubmit;
 
 async function fetchData(){
 	try{
-		let response = await fetch("../data.json");
+		let response = await fetch("data.json");
 
 		
 		if(localStorage.getItem("comments") == null){
@@ -291,7 +291,7 @@ function updateScore(e){
 
 	const cmt = fetchComment(Number(commentCard.id));
 	cmt.score += increment;
-	
+
 	persistComments();
 	main();
 }
